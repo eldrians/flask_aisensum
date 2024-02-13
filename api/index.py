@@ -2,10 +2,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hello, World!'
+@app.route("/")
+def welcome():
+    return "Axel Eldrian Hadiwibowo"
 
-@app.route('/about')
-def about():
-    return 'About'
+from controller import *
