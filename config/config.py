@@ -1,14 +1,12 @@
-# dbconfig = {
-#     "hostname":"localhost",
-#     "username":"root",
-#     "password":"",
-#     "database":"aisensum_db"
-# }
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 dbconfig = {
-    "hostname":"w8e.h.filess.io",
-    "username":"aisensum_inchweakhe",
-    "password":"fc4eb03ae91c36fdac12e4953885471c7a5999f9",
-    "database":"aisensum_inchweakhe",
-    "port": "3306"
+    "hostname": os.environ.get("DB_HOSTNAME"),
+    "username":os.environ.get("DB_USERNAME"),
+    "password":os.environ.get("DB_PASSWORD"),
+    "database":os.environ.get("DB_DATABASE"),
+    "port": os.environ.get("DB_PORT")
 }
