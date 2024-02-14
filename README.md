@@ -1,28 +1,186 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+# AISENSUM Test - Axel Eldrian Hadiwibowo
 
-# Flask + Vercel
+#### Access APP on [aisensum-app][3]
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+FRONTEND - NEXT14 - [frontend-file][1]
 
-## Demo
+BACKEND - FLASK - MYSQL - [backend-file][2]
 
-https://flask-python-template.vercel.app/
+[1]: https://github.com/eldrians/next_aisensum
+[2]: https://github.com/eldrians/flask_aisensum
+[3]: https://next-aisensum.vercel.app/
 
-## How it Works
+Here are the tasks that I have completed.
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+| Task                                                              |
+| :---------------------------------------------------------------- |
+| `Frontend: CRUD without Refresh (Tanstack)`                       |
+| `Frontend: loading with skeleton, Filter, Search, and Pagination` |
+| `Frontend: Responsive application (mobile, desktop, tablet)`      |
+| `Frontend: Clean-code file structure`                             |
+| `Frontend: Good Performance (Page Speed avg 90%>)`                |
+| `Frontend: Reusable Component (shadcn)`                           |
+| `Frontend: Form Validation (zod)`                                 |
+| `Backend: Create app with flask and mysql`                        |
+| `Backend: CRUD`                                                   |
+| `Backend: JWT validation (created but not applied)`               |
+| `Backend: clean-code`                                             |
+| `APP: Application are completed host on vercel`                   |
 
-## Running Locally
+## FRONTEND - DOCUMENTATION
 
-```bash
-npm i -g vercel
-vercel dev
+### CRUD - Customer
+
+Get Customer
+
+![getcustomer](https://github.com/eldrians/next_aisensum/assets/91566708/acff956a-42d6-445a-a8af-546bfb4a2b70)
+
+
+Add Customer
+
+![addcustomer](https://github.com/eldrians/next_aisensum/assets/91566708/299e4e28-54cb-4013-9a3c-a593bb9a3994)
+
+
+Update Customer (with patch)
+
+![updatecustomer](https://github.com/eldrians/next_aisensum/assets/91566708/84c8c762-3b38-4954-8677-d15c42359832)
+
+
+Delete Customer
+
+![deletecustomer](https://github.com/eldrians/next_aisensum/assets/91566708/3542d6d9-3dc9-4383-ac7f-479adb8f4e0b)
+
+
+### Loading, search, filter, and pagination
+
+loading with skeleton
+
+![image](https://github.com/eldrians/next_aisensum/assets/91566708/9a5a107c-cbb8-47bc-8b11-8c20810ed8ed)
+
+search name
+
+![search](https://github.com/eldrians/next_aisensum/assets/91566708/bb928757-6147-4df3-9f76-3c25bafe8668)
+
+
+custom header
+
+![custom](https://github.com/eldrians/next_aisensum/assets/91566708/3ffc6d32-c700-4627-8f13-442b5d98b3b6)
+
+
+pagination
+
+![pagination](https://github.com/eldrians/next_aisensum/assets/91566708/1a58ec4e-dbcc-4116-9c4c-6b94fe0f8aee)
+
+
+### Responsive
+
+![responsive](https://github.com/eldrians/next_aisensum/assets/91566708/32f307a6-4a4a-4db1-b27d-189790782863)
+
+
+### Clean Code
+
+You can see from github
+
+### Good Performance
+
+mobile
+
+![image](https://github.com/eldrians/next_aisensum/assets/91566708/40e7d0b2-1020-493f-afaa-a85f6ac83781)
+
+desktop
+
+![image](https://github.com/eldrians/next_aisensum/assets/91566708/cbe5e5fa-d84a-4990-9e85-7abdbb3dea2f)
+
+### Form Validation
+
+![validation](https://github.com/eldrians/next_aisensum/assets/91566708/6c092990-4b81-411a-b090-b8e420eb1d77)
+
+
+### Reusable component
+
+You can see from github
+
+## BACKEND - DOCUMENTATION
+
+Base URL : https://flask-aisensum.vercel.app/
+
+i created JWT authentication, and autorization too, but i dont implemented because the application dont have sign up or login section. u can see from my github [backend-axel][3]
+
+### API Reference
+
+#### Get all customer
+
+```http
+  GET /customer
 ```
 
-Your Flask application is now available at `http://localhost:3000`.
+#### Get add customer
 
-## One-Click Deploy
+```http
+  POST /customer
+```
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+| form-data     | Type     |
+| :------------ | :------- |
+| `name`        | `string` |
+| `username_ig` | `string` |
+| `fav-color`   | `string` |
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+#### Get update customer
+
+```http
+  PUT /customer/<id>
+```
+
+but, i used PATCH instead PUT
+
+```http
+  PATCH /customer/patch/<id>
+```
+
+| form-data     | Type     |
+| :------------ | :------- |
+| `id`          | `number` |
+| `name`        | `string` |
+| `username_ig` | `string` |
+| `fav-color`   | `string` |
+
+#### Delete update customer
+
+```http
+  DELETE /customer/<id>
+```
+
+| form-data | Type     |
+| :-------- | :------- |
+| `id`      | `number` |
+
+## Setup & Run
+
+### Setup FRONT END - NEXT JS
+
+```http
+  git clone https://github.com/eldrians/next_aisensum.git
+
+  npm i
+
+  create and fill .env.local
+
+  npm run dev
+```
+
+### Setup BACK END - FLASK MYSQL
+
+file : [flask-aisensum-github][2]
+
+```http
+  git clone https://github.com/eldrians/flask_aisensum.git
+
+  npm i -g vercel
+
+  pip install mysql.connector flask_cors jwt
+
+  create and fill .env
+
+  Vercel dev
+```
